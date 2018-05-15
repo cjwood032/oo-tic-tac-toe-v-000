@@ -12,7 +12,7 @@ class TicTacToe
   [0,4,8],
   [6,4,2]
     ]
-  def play(board)
+  def play
   while !over?(board)
     turn(board)
   end
