@@ -75,11 +75,11 @@ class TicTacToe
   @board[index]== "X" || @board[index] == "O"
   end
 
-  def current_player(board)
-  turn_count(board) % 2 == 0 ? "X" : "O"
+  def current_player()
+  turn_count() % 2 == 0 ? "X" : "O"
   end
 
-  def turn_count(board)
+  def turn_count()
   @board.count{|token| token == "X" || token == "O"}
   end
 
@@ -87,9 +87,9 @@ class TicTacToe
   @board[index] = player
   end
 
-  def winner(board)
-  if winning_combo = won?(board)
-    board[winning_combo.first]
+  def winner()
+  if winning_combo = won?()
+    @board[winning_combo.first]
   end
   end
 end
