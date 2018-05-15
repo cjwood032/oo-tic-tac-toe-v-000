@@ -51,28 +51,28 @@ class TicTacToe
   !won?(board) && full?(board)
   end
 
-  def over?(board)
-  won?(board) || draw?(board)
+  def over?()
+  won?() || draw?()
   end
 
   def input_to_index(user_input)
   user_input.to_i - 1
   end
 
-  def turn(board)
+  def turn()
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
-  if valid_move?(board, index)
-    move(board, index, current_player(board))
-    display_board(board)
+  if valid_move?(index)
+    move(index, current_player())
+    display_board()
   else
-    turn(board)
+    turn()
   end
   end
 
-  def position_taken?(board, index)
-  board[index]== "X" || board[index] == "O"
+  def position_taken?(index)
+  @board[index]== "X" || @board[index] == "O"
   end
 
   def current_player(board)
